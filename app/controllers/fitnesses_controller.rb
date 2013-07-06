@@ -1,13 +1,28 @@
+require "open-uri"
+
 class FitnessesController < ApplicationController
   # GET /fitnesses
   # GET /fitnesses.json
   def index
     @fitnesses = Fitness.all
+    file = open("http://humanapi.co/v1/human")
+    @results = JSON.load(file.read)
+
+# @results["weight"]["value"]
+# @results["bodyFat"]["value"]
+# @results["bmi"]["value"]
+# @results["bloodPressure"]["value"]["systolic"]
+# @results["bloodPressure"]["value"]["diastolic"]
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @fitnesses }
     end
+
+
+
+
+
   end
 
   # GET /fitnesses/1

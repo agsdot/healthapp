@@ -1,3 +1,5 @@
+<%# require "open-uri" %>
+
 <h1>Listing fitnesses</h1>
 
 <table>
@@ -21,3 +23,37 @@
 <br />
 
 <%= link_to 'New Fitness', new_fitness_path %>
+
+
+<p>
+  <%#  file = open("http://maps.googleapis.com/maps/api/directions/json?origin=94563&destination=94564&sensor=true") %>
+  <%# @results = JSON.load(file.read) %>
+
+<!-- <ul>
+ <%# @results["routes"][0]["legs"][0]["steps"].each_with_index do |direction, index| %>
+  <%# if index == @results["routes"][0]["legs"][0]["steps"].size - 1 %>
+    <li><%#= direction["html_instructions"].html_safe %></li>
+  <%# else %>
+    <li><%#= direction["html_instructions"].html_safe %> for
+    <%#= direction["distance"]["text"].html_safe %></li>
+  <%# end %>
+<%# end %>
+</ul> -->
+
+
+<p>
+  <%#  file = open("http://humanapi.co/v1/human") %>
+  <%# @results = JSON.load(file.read) %>
+
+<ul>
+    <li><%= @results["weight"]["value"] %> in grams</li>
+    <li><%= @results["bodyFat"]["value"] %> Bodyfat %</li>
+    <li><%= @results["bmi"]["value"] %> BMI</li>
+    <li><%= @results["bloodPressure"]["value"]["systolic"] %> Systolic Blood pressure</li>
+    <li><%= @results["bloodPressure"]["value"]["diastolic"] %> Diastolic Blood pressure</li>
+
+
+    <li><%= @results["activities"]["steps"] %> Steps per day</li>
+    <li><%= @results %></li>
+</ul>
+
