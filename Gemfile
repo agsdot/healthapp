@@ -37,3 +37,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem 'humanapi'
+gem 'omniauth'
+gem 'omniauth-humanapi'
