@@ -1,0 +1,23 @@
+<h1>Listing fitnesses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fitnesses.each do |fitness| %>
+  <tr>
+    <td><%= fitness.name %></td>
+    <td><%= link_to 'Show', fitness %></td>
+    <td><%= link_to 'Edit', edit_fitness_path(fitness) %></td>
+    <td><%= link_to 'Destroy', fitness, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fitness', new_fitness_path %>
